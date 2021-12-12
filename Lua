@@ -51,4 +51,4 @@ end
 
 --credits stuff
 
-CreditsSection:NewLabel("Credits to Bandi10xx#0001")
+CreditsSection:NewLabel("Bandi10xx#0001")
