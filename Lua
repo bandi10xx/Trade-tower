@@ -1,0 +1,48 @@
+if game.PlaceId == 5023820864 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Trade Tower Hub", "Sentinel")
+    local AutoFarm = Window:NewTab("AutoFarm")
+    local Player = Window:NewTab("Player")
+    local AutoFarmSection = AutoFarm:NewSection("AutoFarm")
+    local PlayerSection = Player:NewSection("Player")
+
+-- player stuff
+    PlayerSection:NewSlider("WalkSpeed", "Changes the speed that you walk", 250, 16, function(v) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+    PlayerSection:NewSlider("JumpPower", "Changes the power of your jumps", 250, 50, function(v) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+--AutoFarm Stuff
+
+AutoFarmSection:NewButton("AutoBuy Starter", "Automatically buys starter cases", function()
+getgenv().Autobuy = true
+    while true do wait()
+        if getgenv().Autobuy == true then
+       
+       local A_1 = "Starter"
+       local Event = game:GetService("ReplicatedStorage").Events.OpenCase
+       Event:InvokeServer(A_1)
+       
+       
+        end
+       end
+end)
+
+AutoFarmSection:NewButton("AutoSell", "Automatically sells everything worth under 50k RAP", function()
+    getgenv().AutoSell = true
+    while true do wait()
+        if getgenv().AutoSell == true then
+       
+       local A_1 = "SellUnder"
+       local A_2 = 50000
+       local Event = game:GetService("ReplicatedStorage").Events.InventoryActions
+       Event:InvokeServer(A_1, A_2)
+       
+        end
+       end
+end)
+
+end
