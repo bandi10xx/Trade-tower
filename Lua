@@ -47,6 +47,19 @@ AutoFarmSection:NewButton("AutoSell", "Automatically sells everything worth unde
        end
 end)
 
+AutoFarmSection:NewButton("AutoClick", "Automatically clicks for you (highly recommended)", function()
+    getgenv().autoclicktradebux = true
+    while true do wait()
+        if getgenv().autoclicktradebux == true then
+       
+       local Event = game:GetService("ReplicatedStorage").Events.ClientClick
+       Event:FireServer()
+       
+        end
+       end
+end)
+
+--credits stuff
 CreditsSection:NewButton("Made by Bandi10xx#0001", "Copy bandis username", function()
     setclipboard("Bandi10xx#0001")
 end)
