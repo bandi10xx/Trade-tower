@@ -51,4 +51,6 @@ end
 
 --credits stuff
 
-CreditsSection:NewLabel("made by Bandi10xx#0001")
+CreditsSection:NewButton("Made by Bandi10xx#0001", "Copy bandis username", function()
+    setclipboard("Bandi10xx#0001")
+end)
