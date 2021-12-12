@@ -3,8 +3,10 @@ if game.PlaceId == 5023820864 then
     local Window = Library.CreateLib("Trade Tower Hub", "Sentinel")
     local AutoFarm = Window:NewTab("AutoFarm")
     local Player = Window:NewTab("Player")
+    local Credits = Window:NewTab("Credits")
     local AutoFarmSection = AutoFarm:NewSection("AutoFarm")
     local PlayerSection = Player:NewSection("Player")
+    local CreditsSection = Credits:NewSection("Credits")
 
 -- player stuff
     PlayerSection:NewSlider("WalkSpeed", "Changes the speed that you walk", 250, 16, function(v) -- 500 (MaxValue) | 0 (MinValue)
@@ -46,3 +48,7 @@ AutoFarmSection:NewButton("AutoSell", "Automatically sells everything worth unde
 end)
 
 end
+
+--credits stuff
+
+CreditsSection:NewLabel("Credits to Bandi10xx#0001")
